@@ -7,8 +7,8 @@ interface SuccessPageProps {
   };
 }
 
-const SuccessPage = ({ searchParams }: SuccessPageProps) => {
-  const id = searchParams?.session_id;
+const SuccessPage = async ({ searchParams }: SuccessPageProps) => {
+  const id = await searchParams?.session_id;
 
   if (!id) {
     redirect("/");
