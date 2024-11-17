@@ -10,11 +10,11 @@ import { MdStar } from "react-icons/md";
 import AddToCartButton from "@/components/AddToCartButton";
 
 interface ProductPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 const ProductPage = async ({ params }: ProductPageProps) => {
-  const { slug } = await Promise.resolve(params);
+  const { slug } = await params;
   const query = groq`*[_type == "product" && slug.current == $slug][0]{
   ...
 }`;
