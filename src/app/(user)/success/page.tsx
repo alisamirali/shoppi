@@ -7,11 +7,12 @@ interface SuccessPageProps {
   };
 }
 
-const SuccessPage = async ({ searchParams }: SuccessPageProps) => {
-  const id = await searchParams?.session_id;
+const SuccessPage = ({ searchParams }: SuccessPageProps) => {
+  const id = searchParams?.session_id;
 
   if (!id) {
     redirect("/");
+    return null;
   }
 
   return (
@@ -20,4 +21,5 @@ const SuccessPage = async ({ searchParams }: SuccessPageProps) => {
     </div>
   );
 };
+
 export default SuccessPage;
