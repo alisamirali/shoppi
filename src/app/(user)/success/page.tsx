@@ -2,13 +2,14 @@ import SuccessContainer from "@/components/SuccessContainer";
 import { redirect } from "next/navigation";
 
 interface SuccessPageProps {
-  searchParams: {
+  searchParams: Promise<{
     session_id: string | null;
-  };
+  }>;
 }
 
-const SuccessPage = ({ searchParams }: SuccessPageProps) => {
-  const id = searchParams?.session_id;
+const SuccessPage = async ({ searchParams }: SuccessPageProps) => {
+  const resolvedParams = await searchParams;
+  const id = resolvedParams?.session_id;
 
   if (!id) {
     redirect("/");
