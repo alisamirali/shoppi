@@ -13,6 +13,7 @@ const SuccessPage = async ({ searchParams }: SuccessPageProps) => {
 
   if (!id) {
     redirect("/");
+
     return null;
   }
 
