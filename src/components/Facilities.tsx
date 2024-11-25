@@ -27,7 +27,7 @@ const facilitiesData = [
 
 const Facilities = () => {
   return (
-    <section className="py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+    <section className="py-10 flex items-center justify-between flex-col md:flex-row flex-wrap gap-5 md:px-4 px-2">
       {facilitiesData.map((facility) => (
         <div
           key={facility?.title}

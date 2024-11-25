@@ -14,7 +14,7 @@ const Banner = async () => {
   return (
     <Container className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 md:max-h-[600px]">
       {/* Left Single Banner */}
-      <div className="md:col-span-2 bg-bgLight relative flex items-start md:items-center justify-between flex-col md:flex-row p-6 rounded-lg overflow-hidden group">
+      <div className="md:col-span-2 bg-bgLight relative flex items-start md:items-center justify-between flex-col md:flex-row p-4 md:p-6 rounded-lg overflow-hidden group">
         <div className="flex flex-col justify-center gap-5 md:gap-10">
           <div className="flex flex-col gap-1 md:gap-3">
             <button className="bg-lightGreen text-white rounded-full w-20 py-1 text-sm font-semibold hover:bg-green-600 hoverEffect">
@@ -40,7 +40,7 @@ const Banner = async () => {
           width={500}
           height={500}
           priority
-          className="object-cover h-[260px] w-full md:max-h-[400px] self-center group-hover:scale-105 hoverEffect"
+          className="object-contain md:object-cover flex items-center justify-center h-[300px] md:h-[400px] w-full group-hover:scale-105 hoverEffect"
         />
       </div>
 
